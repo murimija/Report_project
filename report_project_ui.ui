@@ -20,22 +20,6 @@
    <string>Otchet</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="repOutputLbl">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>10</y>
-      <width>351</width>
-      <height>521</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>    Report:</string>
-    </property>
-    <property name="margin">
-     <number>20</number>
-    </property>
-   </widget>
    <widget class="QPushButton" name="createReportButton">
     <property name="geometry">
      <rect>
@@ -49,15 +33,23 @@
      <string>Create Report</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>421</width>
+      <width>781</width>
       <height>521</height>
      </rect>
     </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTextEdit" name="inputField"/>
+     </item>
+     <item>
+      <widget class="QListWidget" name="outputField"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

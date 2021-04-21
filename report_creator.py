@@ -173,11 +173,48 @@ def toListProjAndAnim(listOfAnim, listToAdd):
             currenProject = a
             listToAdd.append(i.getName())
 
+global str
 
+def createReportList():
+    reportList = []
 
-resList =[]
+    currentStr = "Отчет " + "Дата"
+    reportList.append(currentStr)
 
-toListProjAndAnim(listOfEasy, resList)
+    currentStr = "Новые (" + str(len(listOfAnimation)) + ")"
+    reportList.append(currentStr)
 
-for i in resList:
-    print(i)
+    reportList.append("")
+
+    currentStr = "Легкие (" + str(len(listOfEasy)) + ")"
+    reportList.append(currentStr)
+
+    toListProjAndAnim(listOfEasy, reportList)
+
+    reportList.append("")
+
+    currentStr = "Средние (" + str(len(listOfMedium)) + ")"
+    reportList.append(currentStr)
+
+    toListProjAndAnim(listOfMedium, reportList)
+
+    reportList.append("")
+
+    currentStr = "Сложные (" + str(len(listOfHard)) + ")"
+    reportList.append(currentStr)
+
+    toListProjAndAnim(listOfHard, reportList)
+
+    reportList.append("")
+
+    currentStr = "Правки (" + str(countAllEdits(listOfEdit)) + ")"
+    reportList.append(currentStr)
+
+    toListProjAndAnim(listOfEdit, reportList)
+
+    return reportList
+
+#resList = createReportList()
+
+#for i in resList:
+#    print(i)

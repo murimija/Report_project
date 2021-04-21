@@ -13,7 +13,7 @@ class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
 
     def createReport(self):
         print("Типа отчет!")
-        self.repOutputLbl.setText("Типа отчет!")
+        self.outputField.setText("Типа отчет!")
 
 def main():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
