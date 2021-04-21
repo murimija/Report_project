@@ -36,7 +36,7 @@ wordOfHard = ["(сл)"]
 
 wordsOfProject = ["SE", "CE"]
 
-with open('otchet.txt', 'r', encoding='utf-8') as f:
+with open('otchet 2.txt', 'r', encoding='utf-8') as f:
     initial_report = f.read().splitlines()
 
 for i in initial_report:  # Удаляем Новые и Орг
@@ -77,8 +77,6 @@ for i in listOfAnimation:
         listOfHard.append(i)
 
 listOfEasyProject = []
-
-testList = []
 
 class Proj:
     def __init__(self, name, listOfAnim):
@@ -161,4 +159,25 @@ def printOtchet():
     print("Правки (", a, ")")
     printProjAndAnim(listOfEdit)
 
-printOtchet()
+def toListProjAndAnim(listOfAnim, listToAdd):
+    if len(listOfAnim) == 0:
+        return
+    currenProject = listOfAnim[0].getProj()
+    listToAdd.append(currenProject)
+    for i in listOfAnim:
+        a = i.getProj()
+        if a == currenProject:
+            listToAdd.append(i.getName())
+        else:
+            listToAdd.append(a)
+            currenProject = a
+            listToAdd.append(i.getName())
+
+
+
+resList =[]
+
+toListProjAndAnim(listOfEasy, resList)
+
+for i in resList:
+    print(i)
