@@ -36,12 +36,29 @@ wordOfHard = ["(сл)"]
 
 wordsOfProject = ["SE", "CE"]
 
-with open('otchet 2.txt', 'r', encoding='utf-8') as f:
-    initial_report = f.read().splitlines()
+initial_report = []
 
-for i in initial_report:  # Удаляем Новые и Орг
-    if arrayInStr(wordsToDelete, i):
-        initial_report.remove(i)
+def setInitialReport(irl):
+    global initial_report
+    initial_report = irl
+#    print(irl)
+
+print(initial_report)
+
+def getInputReport():
+
+    global initial_report
+    print(initial_report)
+
+    with open('otchet 2.txt', 'r', encoding='utf-8') as f:
+        initial_report_local = f.read().splitlines()
+
+    for i in initial_report_local:  # Удаляем Новые и Орг
+        if arrayInStr(wordsToDelete, i):
+            initial_report_local.remove(i)
+
+    initial_report = initial_report_local
+
 
 initial_report = [i for i in initial_report if i != ""]  # Удаляем оставшиеся пробелы
 
@@ -176,6 +193,7 @@ def toListProjAndAnim(listOfAnim, listToAdd):
 global str
 
 def createReportList():
+
     reportList = []
 
     currentStr = "Отчет " + "Дата"

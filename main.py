@@ -1,6 +1,7 @@
 import sys  # sys нужен для передачи argv в QApplication
 from PyQt5 import QtWidgets
 import rpui  # Это наш конвертированный файл дизайна
+import report_creator
 
 class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
     def __init__(self):
@@ -13,7 +14,12 @@ class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
 
     def createReport(self):
         print("Типа отчет!")
-        self.outputField.setText("Типа отчет!")
+        inputReport = self.inputField.toPlainText()
+        report_creator.initial_report = inputReport
+        report_creator.setInitialReport(inputReport)
+        report_creator.createReportList()
+        print(report_creator.createReportList())
+        #print(inputReport)
 
 def main():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
