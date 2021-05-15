@@ -27,6 +27,19 @@ class Anim:
     def getProj(self):
         return self.project
 
+class Proj:
+    def __init__(self, name, listOfAnim):
+        self.name = name
+        self.listOfAnim = listOfAnim
+
+    def appendAnimToProj(self, app):
+        self.listOfAnim.append(app)
+
+    def printProj(self):
+        print(self.name)
+        for i in self.listOfAnim:
+            print(i)
+
 wordsToDelete = ["Новые", "орг", "Правки"]
 wordsOfDifficulties = ["(л)", "(ср)", "(сл)"]
 
@@ -41,102 +54,21 @@ initial_report = []
 def setInitialReport(irl):
     global initial_report
     initial_report = irl
-#    print(irl)
-
-print(initial_report)
 
 def getInputReport():
 
     global initial_report
     print(initial_report)
 
-    with open('otchet 2.txt', 'r', encoding='utf-8') as f:
+    with open('otchet.txt', 'r', encoding='utf-8') as f:
         initial_report_local = f.read().splitlines()
 
     for i in initial_report_local:  # Удаляем Новые и Орг
         if arrayInStr(wordsToDelete, i):
             initial_report_local.remove(i)
 
+    initial_report_local = [i for i in initial_report_local if i != ""]  # Удаляем оставшиеся пробелы
     initial_report = initial_report_local
-
-
-initial_report = [i for i in initial_report if i != ""]  # Удаляем оставшиеся пробелы
-
-listOfAll = []
-listOfAnimation = []
-listOfEdit = []
-
-listOfEasy = []
-listOfMedium = []
-listOfHard = []
-
-currenProject = "КАКОЙ_ТО ПРОЕКТ"
-
-for i in initial_report:
-    if arrayInStr(wordsOfProject, i):
-        currenProject = i
-    else:
-        anim = Anim(i, currenProject)
-        listOfAll.append(anim)
-
-for i in listOfAll:
-    if arrayInStr(wordsOfDifficulties, i.name):
-        listOfAnimation.append(i)
-    else:
-        listOfEdit.append(i)
-
-for i in listOfAnimation:
-    if arrayInStr(wordsOfEasy, i.name):
-        listOfEasy.append(i)
-    elif arrayInStr(wordsOfMedium, i.name):
-        listOfMedium.append(i)
-    else:
-        listOfHard.append(i)
-
-listOfEasyProject = []
-
-class Proj:
-    def __init__(self, name, listOfAnim):
-        self.name = name
-        self.listOfAnim = listOfAnim
-
-    def appendAnimToProj(self, app):
-        self.listOfAnim.append(app)
-
-    def printProj(self):
-        print(self.name)
-        for i in self.listOfAnim:
-            print(i)
-
-listOfEasy = sorted(listOfEasy, key=operator.attrgetter('project'))
-listOfMedium = sorted(listOfMedium, key=operator.attrgetter('project'))
-listOfHard = sorted(listOfHard, key=operator.attrgetter('project'))
-listOfEdit = sorted(listOfEdit, key=operator.attrgetter('project'))
-
-def countEdit(edit):
-    if "(1)" in edit:
-        return 1
-    elif "(2)" in edit:
-        return 2
-    elif "(3)" in edit:
-        return 3
-    elif "(4)" in edit:
-        return 4
-    elif "(5)" in edit:
-        return 5
-    elif "(6)" in edit:
-        return 6
-    elif "(7)" in edit:
-        return 7
-    elif "(8)" in edit:
-        return 8
-    elif "(9)" in edit:
-        return 9
-    elif "(10)" in edit:
-        return 10
-    else:
-        return 1
-
 
 def countAllEdits(list):
     summ = 0
@@ -193,7 +125,6 @@ def toListProjAndAnim(listOfAnim, listToAdd):
 global str
 
 def createReportList():
-
     reportList = []
 
     currentStr = "Отчет " + "Дата"
@@ -232,7 +163,72 @@ def createReportList():
 
     return reportList
 
-#resList = createReportList()
+getInputReport()
 
-#for i in resList:
-#    print(i)
+listOfAll = []
+listOfAnimation = []
+listOfEdit = []
+
+listOfEasy = []
+listOfMedium = []
+listOfHard = []
+
+currenProject = "КАКОЙ_ТО ПРОЕКТ"
+
+for i in initial_report:
+    if arrayInStr(wordsOfProject, i):
+        currenProject = i
+    else:
+        anim = Anim(i, currenProject)
+        listOfAll.append(anim)
+
+for i in listOfAll:
+    if arrayInStr(wordsOfDifficulties, i.name):
+        listOfAnimation.append(i)
+    else:
+        listOfEdit.append(i)
+
+for i in listOfAnimation:
+    if arrayInStr(wordsOfEasy, i.name):
+        listOfEasy.append(i)
+    elif arrayInStr(wordsOfMedium, i.name):
+        listOfMedium.append(i)
+    else:
+        listOfHard.append(i)
+
+listOfEasyProject = []
+
+listOfEasy = sorted(listOfEasy, key=operator.attrgetter('project'))
+listOfMedium = sorted(listOfMedium, key=operator.attrgetter('project'))
+listOfHard = sorted(listOfHard, key=operator.attrgetter('project'))
+listOfEdit = sorted(listOfEdit, key=operator.attrgetter('project'))
+
+def countEdit(edit):
+    if "(1)" in edit:
+        return 1
+    elif "(2)" in edit:
+        return 2
+    elif "(3)" in edit:
+        return 3
+    elif "(4)" in edit:
+        return 4
+    elif "(5)" in edit:
+        return 5
+    elif "(6)" in edit:
+        return 6
+    elif "(7)" in edit:
+        return 7
+    elif "(8)" in edit:
+        return 8
+    elif "(9)" in edit:
+        return 9
+    elif "(10)" in edit:
+        return 10
+    else:
+        return 1
+
+resList = createReportList()
+
+for i in resList:
+    print(i)
+
