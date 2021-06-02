@@ -13,12 +13,19 @@ class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
         # при нажатии кнопки
 
     def createReport(self):
-        print("Типа отчет!")
         inputReport = self.inputField.toPlainText()
-        report_creator.initial_report = inputReport
-        report_creator.setInitialReport(inputReport)
-        report_creator.createReportList()
-        print(report_creator.createReportList())
+
+        list01 = inputReport.splitlines()
+
+        resList = report_creator.createReportList(list01)
+
+        self.outputField.clear()
+
+        for i in resList:
+            self.outputField.addItem(i)
+
+
+        #print(report_creator.createReportList())
         #print(inputReport)
 
 def main():

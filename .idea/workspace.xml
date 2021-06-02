@@ -44,7 +44,7 @@
     <option name="mySupportGeventDebugging" value="true" />
     <option name="myDropIntoDebuggerOnFailedTests" value="true" />
   </component>
-  <component name="RunManager" selected="Python.report_creator">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Report_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -137,5 +137,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/report_creator.py</url>
+          <line>134</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
