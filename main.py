@@ -11,6 +11,7 @@ class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
         self.setupUi(self)  # Это нужно для инициализации нашего дизайна
         self.createReportButton.clicked.connect(self.createReport)  # Выполнить функцию browse_folder
         # при нажатии кнопки
+        self.percentageButton.clicked.connect(self.countPercentage)
 
     def createReport(self):
         inputReport = self.inputField.toPlainText()
@@ -22,11 +23,17 @@ class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
         self.outputField.clear()
 
         for i in resList:
-            self.outputField.addItem(i)
+            self.outputField.append(i)
 
 
         #print(report_creator.createReportList())
         #print(inputReport)
+
+    def countPercentage(self):
+        gradeLocal = self.grade.currentText()
+        hours = self.hours.value() 
+        self.label_3.setText(str(report_creator.countPercentage(gradeLocal)/hours) + "%")
+
 
 def main():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
