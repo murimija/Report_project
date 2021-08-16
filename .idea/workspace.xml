@@ -30,7 +30,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -52,9 +52,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\murim\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
@@ -66,16 +66,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="report_creator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="report_creator" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Report_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\Tanalin\Tan.Py\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/report_creator.py" />
@@ -94,9 +94,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\Tanalin\Tan.Py\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rpui.py" />
@@ -115,7 +115,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.report_creator" />
         <item itemvalue="Python.rpui" />
       </list>
     </recent_temporary>
@@ -143,81 +142,8 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622812800583">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622812800583" />
-    <state x="718" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1623051445493">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="718" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1623051445493" />
-    <state width="1899" height="348" key="GridCell.Tab.-1.bottom" timestamp="1623056712818">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.-1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623056712818" />
-    <state width="1899" height="348" key="GridCell.Tab.-1.center" timestamp="1623056712818">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.-1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623056712818" />
-    <state width="1899" height="348" key="GridCell.Tab.-1.left" timestamp="1623056712818">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.-1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623056712818" />
-    <state width="1899" height="348" key="GridCell.Tab.-1.right" timestamp="1623056712818">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.-1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623056712818" />
-    <state width="1899" height="281" key="GridCell.Tab.0.bottom" timestamp="1623064668503">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623064668503" />
-    <state width="1899" height="281" key="GridCell.Tab.0.center" timestamp="1623064668503">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623064668503" />
-    <state width="1899" height="281" key="GridCell.Tab.0.left" timestamp="1623064668503">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623064668503" />
-    <state width="1899" height="281" key="GridCell.Tab.0.right" timestamp="1623064668503">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623064668503" />
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1623056707560">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623056707560" />
-    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1623056707560">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623056707560" />
-    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1623056707560">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623056707560" />
-    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1623056707560">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623056707560" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1622812700231">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1622812700231" />
-    <state x="588" y="325" key="com.jetbrains.python.documentation.PythonDocumentationEntryEditor" timestamp="1622812693178">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="588" y="325" key="com.jetbrains.python.documentation.PythonDocumentationEntryEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1622812693178" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/report_creator.py</url>
-          <line>177</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">

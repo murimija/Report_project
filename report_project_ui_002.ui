@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>908</width>
-    <height>710</height>
+    <width>1090</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -47,8 +47,8 @@
    <widget class="QPushButton" name="createReportButton">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>662</y>
+      <x>10</x>
+      <y>720</y>
       <width>621</width>
       <height>23</height>
      </rect>
@@ -66,7 +66,7 @@
       <x>10</x>
       <y>20</y>
       <width>621</width>
-      <height>631</height>
+      <height>691</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -82,23 +82,44 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>20</y>
-      <width>241</width>
-      <height>81</height>
+      <y>100</y>
+      <width>441</width>
+      <height>146</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
+     <item row="3" column="0">
+      <widget class="QLabel" name="j_perc_label">
+       <property name="text">
+        <string>J%</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="l_perc_label">
+       <property name="text">
+        <string>L%</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="m_perc_label">
+       <property name="text">
+        <string>M%</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="s_perc_label">
+       <property name="text">
+        <string>S%</string>
+       </property>
+      </widget>
+     </item>
      <item row="2" column="0">
       <widget class="QPushButton" name="percentageButton">
        <property name="text">
         <string>Посчитать процент</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QSpinBox" name="hours">
-       <property name="value">
-        <number>40</number>
        </property>
       </widget>
      </item>
@@ -109,41 +130,24 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="grade">
-       <item>
-        <property name="text">
-         <string>J</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>M</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>S</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>L</string>
-        </property>
-       </item>
+     <item row="1" column="0">
+      <widget class="QSpinBox" name="hours">
+       <property name="value">
+        <number>40</number>
+       </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Грейд:</string>
+        <string>Орг:</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>%</string>
+     <item row="1" column="1">
+      <widget class="QSpinBox" name="org">
+       <property name="value">
+        <number>10</number>
        </property>
       </widget>
      </item>

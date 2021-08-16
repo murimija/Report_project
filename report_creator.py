@@ -1,5 +1,5 @@
 import operator
-
+import re
 
 
 def arrayInStr(array, str):
@@ -166,7 +166,7 @@ numOfEdit = 0
 def createReportList(inputData):
     # Получили на вход ЧТО-ТО
 
-    wordsToDelete = ["орг", "Правки"]
+    wordsToDelete = ["орг", "Правки", "Локализации"]
     wordsOfDifficulties = ["(л)", "(ср)", "(сл)", "(Л)", "(Ср)", "(Сл)", "(СР)", "(СЛ)"]
 
     wordsOfEasy = ["(л)", "(Л)"]
@@ -175,9 +175,11 @@ def createReportList(inputData):
 
     wordsOfProject = ["SE", "CE", "se", "ce", "Se", "Ce", "srv", "Srv", "SRV"]
 
+    countNewEditFromDaily(inputData)
+
     local_initial_report = getInputReport(inputData, wordsToDelete)  # Удаляем орг и пробелы
 
-    print(local_initial_report)
+    #print(local_initial_report)
 
     listOfAll = []
     listOfAnimation = []
@@ -186,6 +188,9 @@ def createReportList(inputData):
     listOfEasy = []
     listOfMedium = []
     listOfHard = []
+
+    listOfHo = []
+    listOfLoc = []
 
     currenProject = "КАКОЙ_ТО ПРОЕКТ"
 
@@ -199,6 +204,9 @@ def createReportList(inputData):
     for i in listOfAll:  # Делим список на Аним и Правки
         if arrayInStr(wordsOfDifficulties, i.name):
             listOfAnimation.append(i)
+        elif not re.search(r'\s', i.name):
+            listOfLoc.append(i)
+            print("Я нашел локо: " + str(i.name))
         else:
             listOfEdit.append(i)
 
@@ -220,10 +228,6 @@ def createReportList(inputData):
     # Формируем массив строк из всего, что получилось
 
     reportList = []
-
-    currentStr = str(len(listOfHard)) + "\t" + str(len(listOfMedium)) + "\t" + str(len(listOfEasy)) + "\t" + str(
-        countAllEdits(listOfEdit))
-    reportList.append(currentStr)
 
     currentStr = "Отчет " + "Дата"
     reportList.append(currentStr)
@@ -259,6 +263,17 @@ def createReportList(inputData):
 
     toListProjAndAnim(listOfEdit, reportList)
 
+    reportList.append("")
+
+    currentStr =""
+
+    currentStr = "Локализация (" + str(len(listOfLoc)) + ")"
+    reportList.append(currentStr)
+
+    toListProjAndAnim(listOfLoc, reportList)
+
+    print(listOfLoc)
+
     global numOfEasy
     global numOfMedium
     global numOfHard
@@ -271,6 +286,24 @@ def createReportList(inputData):
 
     return reportList
 
+def createInfoCheсkList():
+
+    reportList = []
+
+    currentStr = str(numOfHard) + "\t" + str(numOfMedium) + "\t" + str(numOfEasy) + "\t" + str(numOfEdit)
+    reportList.append(currentStr)
+
+    summNew = numOfEasy + numOfMedium + numOfHard
+    summEdit = numOfEdit
+
+    currentStr = str("Новые в дневном: " + str(numOfNewDaily) + " = " + str(summNew) + " :Новые посчитаны")
+    reportList.append(currentStr)
+
+    currentStr = str("Правки в дневном: " + str(numOfEditDaily)  + " = " + str(summEdit) + " :Правки посчитаны")
+    reportList.append(currentStr)
+
+    return reportList
+
 
 def countPercentage(grade):
     global numOfEasy
@@ -278,7 +311,7 @@ def countPercentage(grade):
     global numOfHard
     global numOfEdit
 
-    coef = [[2, 4, 0, 1], [1.4, 2.8, 14, 0.7], [1, 2, 10, 0.5]]
+    coef = [[2, 4, 0, 1], [1.4, 2.8, 12, 0.7], [1, 2, 8, 0.5]] #Нормативы
 
     if grade == "J":
         coefOfEasy = coef[0][0]
@@ -304,7 +337,34 @@ def countPercentage(grade):
 
     return numOfEasy * coefOfEasy + numOfMedium * coefOfMedium + numOfHard * coefOfHard + numOfEdit * coefOfEdit
 
+numOfNewDaily = 0
+numOfEditDaily = 0
 
+def countNewEditFromDaily(inputData):
+
+    newCounter = 0
+    editCounter = 0
+
+    for i in inputData:
+        if arrayInStr(["Новые"], i):
+            temp = re.findall(r'\d+', i)
+            newCounter += int(temp[0])
+            #print(newCounter)
+
+        if arrayInStr(["Правки"], i):
+            temp = re.findall(r'\d+', i)
+            editCounter += int(temp[0])
+            #print(editCounter)
+
+    global numOfNewDaily
+    global numOfEditDaily
+
+    numOfNewDaily = newCounter
+    numOfEditDaily = editCounter
+
+    print(newCounter, numOfNewDaily)
+
+    return [newCounter, editCounter]
 
 # countPercentage("J")
 #
