@@ -1,5 +1,9 @@
 import operator
 import re
+import datetime
+import math
+
+from pip._vendor.tenacity._utils import now
 
 
 def arrayInStr(array, str):
@@ -161,6 +165,8 @@ numOfEasy = 0
 numOfMedium = 0
 numOfHard = 0
 numOfEdit = 0
+numOfHo = 0
+numOfLoc = 0
 
 
 def createReportList(inputData):
@@ -192,10 +198,11 @@ def createReportList(inputData):
     listOfHo = []
     listOfLoc = []
 
-    currenProject = "КАКОЙ_ТО ПРОЕКТ"
+    currenProject = ""
 
     for i in local_initial_report:  # Переписываем исходный список в формате Аним-Проект (для этого есть отдельны тип)
-        if arrayInStr(wordsOfProject, i):
+        #if arrayInStr(wordsOfProject, i):
+        if re.fullmatch(r'\b\w\w.{1,2}\s.{2,3}', i):
             currenProject = i
         else:
             anim = Anim(i, currenProject)
@@ -206,12 +213,14 @@ def createReportList(inputData):
             listOfAnimation.append(i)
         elif not re.search(r'\s', i.name):
             listOfLoc.append(i)
-            print("Я нашел локо: " + str(i.name))
+            #print("Я нашел локо: " + str(i.name))
         else:
             listOfEdit.append(i)
 
     for i in listOfAnimation:  # Делим аним на три сложности
-        if arrayInStr(wordsOfEasy, i.name):
+        if re.search(r'\bho', i.name):
+            listOfHo.append(i)
+        elif arrayInStr(wordsOfEasy, i.name):
             listOfEasy.append(i)
         elif arrayInStr(wordsOfMedium, i.name):
             listOfMedium.append(i)
@@ -227,10 +236,14 @@ def createReportList(inputData):
 
     # Формируем массив строк из всего, что получилось
 
+    #Тест!
+
     reportList = []
 
-    currentStr = "Отчет " + "Дата"
+    currentStr = str( "ОТЧЕТ (" + str(datetime.datetime.now().day) +  "." + str(datetime.datetime.now().month) +  "." + str(datetime.datetime.now().year) + ")")
     reportList.append(currentStr)
+
+    reportList.append("")
 
     currentStr = "Новые (" + str(len(listOfAnimation)) + ")"
     reportList.append(currentStr)
@@ -265,24 +278,33 @@ def createReportList(inputData):
 
     reportList.append("")
 
-    currentStr =""
+    currentStr = "Хо (" + str(len(listOfHo)) + ")"
+    reportList.append(currentStr)
+
+    toListProjAndAnim(listOfHo, reportList)
+
+    reportList.append("")
 
     currentStr = "Локализация (" + str(len(listOfLoc)) + ")"
     reportList.append(currentStr)
 
     toListProjAndAnim(listOfLoc, reportList)
 
-    print(listOfLoc)
+    #print(listOfLoc)
 
     global numOfEasy
     global numOfMedium
     global numOfHard
     global numOfEdit
+    global numOfHo
+    global numOfLoc
 
     numOfEasy = len(listOfEasy)
     numOfMedium = len(listOfMedium)
     numOfHard = len(listOfHard)
     numOfEdit = countAllEdits(listOfEdit)
+    numOfHo = len(listOfHo)
+    numOfLoc = len(listOfLoc)
 
     return reportList
 
@@ -305,11 +327,19 @@ def createInfoCheсkList():
     return reportList
 
 
-def countPercentage(grade):
-    global numOfEasy
-    global numOfMedium
-    global numOfHard
-    global numOfEdit
+def countPercentage(grade, hmeel):
+
+    numOfHard = hmeel[0]
+    numOfMedium = hmeel[1]
+    numOfEasy = hmeel[2]
+    numOfEdit = hmeel[3]
+    numOfHo = hmeel[4]
+    numOfLoc = hmeel[5]
+    numOfOrg = hmeel[6]
+
+    #numOfEasyHoLoc = numOfEasy + math.ceil(numOfHo/2) + round(numOfLoc/3)
+
+    #print(numOfEasyHoLoc)
 
     coef = [[2, 4, 0, 1], [1.4, 2.8, 12, 0.7], [1, 2, 8, 0.5]] #Нормативы
 
@@ -335,7 +365,9 @@ def countPercentage(grade):
         coefOfHard = coef[2][2]
         coefOfEdit = coef[2][3]
 
-    return numOfEasy * coefOfEasy + numOfMedium * coefOfMedium + numOfHard * coefOfHard + numOfEdit * coefOfEdit
+        #print(numOfEasy * coefOfEasy + numOfMedium * coefOfMedium + numOfHard * coefOfHard + numOfEdit * coefOfEdit + math.ceil(numOfHo/2) + math.ceil(numOfLoc/3))
+
+    return  numOfEasy * coefOfEasy + numOfMedium * coefOfMedium + numOfHard * coefOfHard + numOfEdit * coefOfEdit + math.ceil(numOfHo/2) + math.ceil(numOfLoc/3) + numOfOrg
 
 numOfNewDaily = 0
 numOfEditDaily = 0
@@ -346,7 +378,7 @@ def countNewEditFromDaily(inputData):
     editCounter = 0
 
     for i in inputData:
-        if arrayInStr(["Новые"], i):
+        if arrayInStr(["Новые", "Новое"], i):
             temp = re.findall(r'\d+', i)
             newCounter += int(temp[0])
             #print(newCounter)
@@ -362,7 +394,7 @@ def countNewEditFromDaily(inputData):
     numOfNewDaily = newCounter
     numOfEditDaily = editCounter
 
-    print(newCounter, numOfNewDaily)
+    #print(newCounter, numOfNewDaily)
 
     return [newCounter, editCounter]
 

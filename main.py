@@ -5,6 +5,7 @@ import report_creator
 import new_zoom_check
 import os
 import unicodedata
+import datetime
 
 class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
     def __init__(self):
@@ -17,8 +18,11 @@ class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
         # self.percentageButton.clicked.connect(self.countPercentage)
         self.checkNewZoomButton.clicked.connect(self.check_new_zoom)
         self.browseFolderButton.clicked.connect(self.browse_folder)
+        self.percentageButton.clicked.connect(self.calculate_rate)
+        self.percentageButtonHand.clicked.connect(self.calculate_rate_hand)
 
     def createReport(self):
+
         input_report = self.inputField.toPlainText()
 
         list01 = input_report.splitlines()
@@ -30,16 +34,29 @@ class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
         for i in resList:
             self.outputField.append(i)
 
-        hours = self.hours.value() #Считаем проценты для всех
-        org = self.org.value()
-        self.j_perc_label.setText("J% " + str(round((report_creator.countPercentage("M") / (hours-org) * 100), 2)) + "%")
-        self.m_perc_label.setText("M% " + str(round((report_creator.countPercentage("M") / (hours-org) * 100), 2)) + "%")
-        self.s_perc_label.setText("S% " + str(round((report_creator.countPercentage("S") / (hours-org) * 100), 2)) + "%")
-        self.l_perc_label.setText("L% " + str(round((report_creator.countPercentage("L") / (hours-org) * 100), 2)) + "%")
+        datetime.datetime.today()
+        today = datetime.datetime.today().weekday()
+        hours = (today + 1) * 8 #Считаем проценты для всех
+        self.hours.setValue(hours)
+
+
+        hmeehl = [report_creator.numOfHard, report_creator.numOfMedium, report_creator.numOfEasy,
+                  report_creator.numOfEdit, report_creator.numOfHo, report_creator.numOfLoc, self.org.value()]
+
+        hours = self.hours.value()
+
+        self.j_perc_label.setText(
+            "J% " + str(round((report_creator.countPercentage("J", hmeehl) / (hours)) * 100, 2)) + "%")
+        self.m_perc_label.setText(
+            "M% " + str(round((report_creator.countPercentage("M", hmeehl) / (hours)) * 100, 2)) + "%")
+        self.s_perc_label.setText(
+            "S% " + str(round((report_creator.countPercentage("S", hmeehl) / (hours)) * 100, 2)) + "%")
+        self.l_perc_label.setText(
+            "L% " + str(round((report_creator.countPercentage("L", hmeehl) / (hours)) * 100, 2)) + "%")
 
         self.outputCheckField.clear()
         resList2 = report_creator.createInfoCheсkList()
-        print(report_creator.createInfoCheсkList())
+        #print(report_creator.createInfoCheсkList())
         for i in resList2:
              self.outputCheckField.append(i)
 
@@ -71,7 +88,7 @@ class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
         list01 = input_table_list.splitlines()
         list01 = new_zoom_check.create_list_from_table(list01)
 
-        for n, i in enumerate(list01, 0):
+        for n, i in enumerate(list01, 0): #Сводим кодировки
             list01[n] = unicodedata.normalize('NFKC', i)
 
         #print(list01)
@@ -97,8 +114,36 @@ class ExampleApp(QtWidgets.QMainWindow, rpui.Ui_MainWindow):
 
         #print(res_list)
 
+    def calculate_rate(self):
 
+        hmeehl = [report_creator.numOfHard, report_creator.numOfMedium, report_creator.numOfEasy, report_creator.numOfEdit, report_creator.numOfHo, report_creator.numOfLoc, self.org.value()]
 
+        hours = self.hours.value()
+
+        self.j_perc_label.setText(
+            "J% " + str(round((report_creator.countPercentage("J", hmeehl) / (hours)) * 100, 2)) + "%")
+        self.m_perc_label.setText(
+            "M% " + str(round((report_creator.countPercentage("M", hmeehl) / (hours)) * 100, 2)) + "%")
+        self.s_perc_label.setText(
+            "S% " + str(round((report_creator.countPercentage("S", hmeehl) / (hours)) * 100, 2)) + "%")
+        self.l_perc_label.setText(
+            "L% " + str(round((report_creator.countPercentage("L", hmeehl) / (hours)) * 100, 2)) + "%")
+
+    def calculate_rate_hand(self):
+
+        hmeehl = [self.numHardHand.value(), self.numMediumHand.value(), self.numEasyHand.value(),
+                  self.numEditHand.value(), self.numHoHand.value(), self.numLocHand.value(), self.org.value()]
+
+        hours = self.hours.value()
+
+        self.j_perc_label.setText(
+            "J% " + str(round((report_creator.countPercentage("J", hmeehl) / (hours)) * 100, 2)) + "%")
+        self.m_perc_label.setText(
+            "M% " + str(round((report_creator.countPercentage("M", hmeehl) / (hours)) * 100, 2)) + "%")
+        self.s_perc_label.setText(
+            "S% " + str(round((report_creator.countPercentage("S", hmeehl) / (hours)) * 100, 2)) + "%")
+        self.l_perc_label.setText(
+            "L% " + str(round((report_creator.countPercentage("L", hmeehl) / (hours)) * 100, 2)) + "%")
 
 def main():
     app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication

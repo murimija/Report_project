@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\Py\Report_project\report_project_ui_003.ui'
+# Form implementation generated from reading ui file 'D:\Py\Report_project\report_project_ui_004.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(1024, 768)
+        MainWindow.resize(1366, 768)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -26,82 +26,146 @@ class Ui_MainWindow(object):
         MainWindow.setAutoFillBackground(False)
         MainWindow.setWindowFilePath("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
         self.centralwidget.setMinimumSize(QtCore.QSize(884, 0))
         self.centralwidget.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(10, 10, 1011, 741))
+        self.tabWidget.setGeometry(QtCore.QRect(10, 10, 1351, 741))
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
-        self.gridLayoutWidget = QtWidgets.QWidget(self.tab)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(640, 10, 351, 223))
-        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget)
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.gridLayoutWidget_2 = QtWidgets.QWidget(self.tab)
+        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 1331, 701))
+        self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
+        self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.createReportButton = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.createReportButton.sizePolicy().hasHeightForWidth())
+        self.createReportButton.setSizePolicy(sizePolicy)
+        self.createReportButton.setSizeIncrement(QtCore.QSize(0, 0))
+        self.createReportButton.setCheckable(False)
+        self.createReportButton.setObjectName("createReportButton")
+        self.gridLayout_3.addWidget(self.createReportButton, 2, 2, 1, 1)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.gridLayout_2 = QtWidgets.QGridLayout()
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.label_2 = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.label_2.setObjectName("label_2")
-        self.gridLayout_2.addWidget(self.label_2, 0, 1, 1, 1)
-        self.j_perc_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.j_perc_label.setObjectName("j_perc_label")
-        self.gridLayout_2.addWidget(self.j_perc_label, 3, 0, 1, 1)
-        self.l_perc_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.l_perc_label.setObjectName("l_perc_label")
-        self.gridLayout_2.addWidget(self.l_perc_label, 6, 0, 1, 1)
-        self.m_perc_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.m_perc_label.setObjectName("m_perc_label")
-        self.gridLayout_2.addWidget(self.m_perc_label, 4, 0, 1, 1)
-        self.org = QtWidgets.QSpinBox(self.gridLayoutWidget)
+        self.org = QtWidgets.QSpinBox(self.gridLayoutWidget_2)
         self.org.setProperty("value", 12)
         self.org.setObjectName("org")
         self.gridLayout_2.addWidget(self.org, 1, 1, 1, 1)
-        self.s_perc_label = QtWidgets.QLabel(self.gridLayoutWidget)
+        self.m_perc_label = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.m_perc_label.setObjectName("m_perc_label")
+        self.gridLayout_2.addWidget(self.m_perc_label, 4, 0, 1, 1)
+        self.j_perc_label = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.j_perc_label.setObjectName("j_perc_label")
+        self.gridLayout_2.addWidget(self.j_perc_label, 3, 0, 1, 1)
+        self.l_perc_label = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.l_perc_label.setObjectName("l_perc_label")
+        self.gridLayout_2.addWidget(self.l_perc_label, 6, 0, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout_2.addWidget(self.label_2, 0, 1, 1, 1)
+        self.s_perc_label = QtWidgets.QLabel(self.gridLayoutWidget_2)
         self.s_perc_label.setObjectName("s_perc_label")
         self.gridLayout_2.addWidget(self.s_perc_label, 5, 0, 1, 1)
-        self.percentageButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.percentageButton = QtWidgets.QPushButton(self.gridLayoutWidget_2)
         self.percentageButton.setObjectName("percentageButton")
         self.gridLayout_2.addWidget(self.percentageButton, 2, 0, 1, 1)
-        self.hours = QtWidgets.QSpinBox(self.gridLayoutWidget)
+        self.label = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label.setObjectName("label")
+        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
+        self.hours = QtWidgets.QSpinBox(self.gridLayoutWidget_2)
         self.hours.setProperty("value", 40)
         self.hours.setObjectName("hours")
         self.gridLayout_2.addWidget(self.hours, 1, 0, 1, 1)
-        self.label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.label.setObjectName("label")
-        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
-        self.horizontalLayoutWidget = QtWidgets.QWidget(self.tab)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 30, 621, 641))
-        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.inputField = QtWidgets.QTextEdit(self.horizontalLayoutWidget)
-        self.inputField.setObjectName("inputField")
-        self.horizontalLayout.addWidget(self.inputField)
-        self.outputField = QtWidgets.QTextEdit(self.horizontalLayoutWidget)
-        self.outputField.setObjectName("outputField")
-        self.horizontalLayout.addWidget(self.outputField)
-        self.createReportButton = QtWidgets.QPushButton(self.tab)
-        self.createReportButton.setGeometry(QtCore.QRect(10, 680, 621, 23))
-        self.createReportButton.setCheckable(False)
-        self.createReportButton.setObjectName("createReportButton")
-        self.label_6 = QtWidgets.QLabel(self.tab)
-        self.label_6.setGeometry(QtCore.QRect(20, 10, 171, 16))
-        self.label_6.setObjectName("label_6")
-        self.label_7 = QtWidgets.QLabel(self.tab)
-        self.label_7.setGeometry(QtCore.QRect(330, 10, 171, 16))
-        self.label_7.setObjectName("label_7")
-        self.outputCheckField = QtWidgets.QTextEdit(self.tab)
-        self.outputCheckField.setGeometry(QtCore.QRect(640, 440, 351, 231))
-        self.outputCheckField.setObjectName("outputCheckField")
-        self.label_8 = QtWidgets.QLabel(self.tab)
-        self.label_8.setGeometry(QtCore.QRect(650, 420, 171, 16))
+        self.verticalLayout_2.addLayout(self.gridLayout_2)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setContentsMargins(-1, 10, -1, 10)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.gridLayout = QtWidgets.QGridLayout()
+        self.gridLayout.setContentsMargins(-1, 10, -1, -1)
+        self.gridLayout.setObjectName("gridLayout")
+        self.numEditHand = QtWidgets.QSpinBox(self.gridLayoutWidget_2)
+        self.numEditHand.setProperty("value", 0)
+        self.numEditHand.setObjectName("numEditHand")
+        self.gridLayout.addWidget(self.numEditHand, 1, 4, 1, 1)
+        self.numMediumHand = QtWidgets.QSpinBox(self.gridLayoutWidget_2)
+        self.numMediumHand.setProperty("value", 0)
+        self.numMediumHand.setObjectName("numMediumHand")
+        self.gridLayout.addWidget(self.numMediumHand, 1, 1, 1, 1)
+        self.numEasyHand = QtWidgets.QSpinBox(self.gridLayoutWidget_2)
+        self.numEasyHand.setProperty("value", 0)
+        self.numEasyHand.setObjectName("numEasyHand")
+        self.gridLayout.addWidget(self.numEasyHand, 1, 3, 1, 1)
+        self.numHardHand = QtWidgets.QSpinBox(self.gridLayoutWidget_2)
+        self.numHardHand.setProperty("value", 0)
+        self.numHardHand.setObjectName("numHardHand")
+        self.gridLayout.addWidget(self.numHardHand, 1, 0, 1, 1)
+        self.numLocHand = QtWidgets.QSpinBox(self.gridLayoutWidget_2)
+        self.numLocHand.setProperty("value", 0)
+        self.numLocHand.setObjectName("numLocHand")
+        self.gridLayout.addWidget(self.numLocHand, 1, 6, 1, 1)
+        self.numHoHand = QtWidgets.QSpinBox(self.gridLayoutWidget_2)
+        self.numHoHand.setProperty("value", 0)
+        self.numHoHand.setObjectName("numHoHand")
+        self.gridLayout.addWidget(self.numHoHand, 1, 5, 1, 1)
+        self.label_9 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_9.setObjectName("label_9")
+        self.gridLayout.addWidget(self.label_9, 0, 0, 1, 1)
+        self.label_10 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_10.setObjectName("label_10")
+        self.gridLayout.addWidget(self.label_10, 0, 1, 1, 1)
+        self.label_11 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_11.setObjectName("label_11")
+        self.gridLayout.addWidget(self.label_11, 0, 3, 1, 1)
+        self.label_12 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_12.setObjectName("label_12")
+        self.gridLayout.addWidget(self.label_12, 0, 4, 1, 1)
+        self.label_13 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_13.setObjectName("label_13")
+        self.gridLayout.addWidget(self.label_13, 0, 5, 1, 1)
+        self.label_14 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_14.setObjectName("label_14")
+        self.gridLayout.addWidget(self.label_14, 0, 6, 1, 1)
+        self.verticalLayout_3.addLayout(self.gridLayout)
+        self.percentageButtonHand = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.percentageButtonHand.setObjectName("percentageButtonHand")
+        self.verticalLayout_3.addWidget(self.percentageButtonHand)
+        self.verticalLayout_2.addLayout(self.verticalLayout_3)
+        self.label_8 = QtWidgets.QLabel(self.gridLayoutWidget_2)
         self.label_8.setObjectName("label_8")
+        self.verticalLayout_2.addWidget(self.label_8)
+        self.outputCheckField = QtWidgets.QTextEdit(self.gridLayoutWidget_2)
+        self.outputCheckField.setObjectName("outputCheckField")
+        self.verticalLayout_2.addWidget(self.outputCheckField)
+        self.gridLayout_3.addLayout(self.verticalLayout_2, 1, 4, 1, 1)
+        self.label_6 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_6.setObjectName("label_6")
+        self.gridLayout_3.addWidget(self.label_6, 0, 0, 1, 1)
+        self.label_7 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_7.setObjectName("label_7")
+        self.gridLayout_3.addWidget(self.label_7, 0, 2, 1, 1)
+        self.outputField = QtWidgets.QTextEdit(self.gridLayoutWidget_2)
+        self.outputField.setObjectName("outputField")
+        self.gridLayout_3.addWidget(self.outputField, 1, 2, 1, 1)
+        self.inputField = QtWidgets.QTextEdit(self.gridLayoutWidget_2)
+        self.inputField.setObjectName("inputField")
+        self.gridLayout_3.addWidget(self.inputField, 1, 0, 1, 1)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.tab_2)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(10, 30, 981, 641))
+        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(10, 30, 1331, 641))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -126,13 +190,13 @@ class Ui_MainWindow(object):
         self.label_3.setGeometry(QtCore.QRect(20, 10, 171, 16))
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.tab_2)
-        self.label_4.setGeometry(QtCore.QRect(350, 10, 171, 16))
+        self.label_4.setGeometry(QtCore.QRect(400, 10, 171, 16))
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.tab_2)
-        self.label_5.setGeometry(QtCore.QRect(680, 10, 171, 16))
+        self.label_5.setGeometry(QtCore.QRect(790, 10, 171, 16))
         self.label_5.setObjectName("label_5")
         self.checkNewZoomButton = QtWidgets.QPushButton(self.tab_2)
-        self.checkNewZoomButton.setGeometry(QtCore.QRect(10, 680, 651, 23))
+        self.checkNewZoomButton.setGeometry(QtCore.QRect(10, 680, 891, 23))
         self.checkNewZoomButton.setCheckable(False)
         self.checkNewZoomButton.setObjectName("checkNewZoomButton")
         self.tabWidget.addTab(self.tab_2, "")
@@ -148,85 +212,60 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Otchet"))
-        self.label_2.setText(_translate("MainWindow", "Орг:"))
+        self.createReportButton.setText(_translate("MainWindow", "Create Report"))
+        self.m_perc_label.setText(_translate("MainWindow", "M%"))
         self.j_perc_label.setText(_translate("MainWindow", "J%"))
         self.l_perc_label.setText(_translate("MainWindow", "L%"))
-        self.m_perc_label.setText(_translate("MainWindow", "M%"))
+        self.label_2.setText(_translate("MainWindow", "Орг:"))
         self.s_perc_label.setText(_translate("MainWindow", "S%"))
         self.percentageButton.setText(_translate("MainWindow", "Посчитать процент"))
         self.label.setText(_translate("MainWindow", " Часов в неделю:"))
+        self.label_9.setText(_translate("MainWindow", "Hard"))
+        self.label_10.setText(_translate("MainWindow", "Medium"))
+        self.label_11.setText(_translate("MainWindow", "Easy"))
+        self.label_12.setText(_translate("MainWindow", "Edit"))
+        self.label_13.setText(_translate("MainWindow", "Ho"))
+        self.label_14.setText(_translate("MainWindow", "Loc"))
+        self.percentageButtonHand.setText(_translate("MainWindow", "Посчитать процент вручную"))
+        self.label_8.setText(_translate("MainWindow", "Дополнительная информация"))
+        self.label_6.setText(_translate("MainWindow", "Дневные отчеты"))
+        self.label_7.setText(_translate("MainWindow", "Недельный отчет"))
         self.inputField.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Новые(4)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">CHR1 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">01. Тряпка рвется 02_10(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">01. f - Подкова клик 02_06(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">01. Бутылки клик 03_00(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">01. Банки клик 03_00(ср)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Правки (5)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">FG5 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">018 ремешок пропал во время каска</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">10_прозрачная женщина</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">CHR1 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">!!!001 обрезано свечение в анимации</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">!!!001 нет тени в анимации</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">!!!001 свечение скачет    </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Новые(3)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">CHR1 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">01. Руки меняются 04_18(ср)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RL1 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Дверь клик 01_18(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Открываем дверь 01_18(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Правки (2)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">CHR1 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">!!!001 переделать аним с новой подковой(2)    </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Новые(7)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RL1 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Бабочки айдл 04_00(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Бабочки клик 02_18(ср)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Бабочки прилетают 01_20(ср)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Бабочки улетают 01_20(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Достаем предмет 02_00(ср)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Щеколда клик 02_06(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Открываем щеколду 02_00(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Правки (0)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Новые(1)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RL1 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - Открываем дверь 00_18(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Правки (0)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Локализации(14)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">01_add_pieces_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04_end_mg_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04_tasks_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">11_morf_click_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">002_08_map_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">01_secret_open_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">01_secret_click_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">01_boilies_change_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">02_before_change_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">02_after_change_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">05_wrote1_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">05_wrote2_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">05_wrote3_ch</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">05_book_change_ch    </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Новые(7)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">RL1 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. f - поднимаем лестницу- скролл 04_06(ср)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. Первый полет 02_18(ср)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. Второй полет 03_12(ср)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. Третий полет 04_06(ср)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. Первый айдл 04_00(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. Второй айдл 04_00(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">04. Третий айдл 04_00(л)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Правки (1)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">CHR1 se</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">!!!01. f - Шкафчик (Сделать аним по новому арту</p></body></html>"))
-        self.createReportButton.setText(_translate("MainWindow", "Create Report"))
-        self.label_6.setText(_translate("MainWindow", "Дневные отчеты"))
-        self.label_7.setText(_translate("MainWindow", "Отчет"))
-        self.label_8.setText(_translate("MainWindow", "Дополнительная информация"))
+"<table border=\"1\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\" cellspacing=\"0\" cellpadding=\"0\">\n"
+"<tr>\n"
+"<td bgcolor=\"#f3f3f3\" style=\" vertical-align:top; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt; background-color:#f3f3f3;\">Новые(3)</span><span style=\" font-family:\'Arial\'; font-size:10pt;\"><br /><br />CHR1 SE<br />52. f - мандрагора клик 01_10(л)<br />52. f - выкапываем мандрагору 05_14(ср)<br /><br />HM1 CE<br />01. цепи клик 03_18(л)<br /><br />Правки(1)<br />FG5 SE<br />018 Сделайте по касту палочки чтоб зонт увеличелся</span></p></td>\n"
+"<td bgcolor=\"#f3f3f3\" style=\" vertical-align:top; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt; background-color:#f3f3f3;\">Новые(4)</span><span style=\" font-family:\'Arial\'; font-size:10pt;\"><br /><br />HM1 SE<br />08. Птички улетели 01_04(ср)<br />HM1 CE<br />01. f - Открываем сундук 05_12(ср)<br />01. f - скорпион idle 05_00(ср)<br />01. f - скорпион клик 03_00(ср)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:8pt; color:#000000; background-color:#f3f3f3;\">01. ho - собираем (л) штангенциркуль</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:8pt; color:#000000; background-color:#f3f3f3;\">01. ho - срезаем веревку (л)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:8pt; color:#000000; background-color:#f3f3f3;\">01. ho - зеленые таблетки (л) залетают в банку</span><span style=\" font-family:\'Arial\'; font-size:10pt;\"><br /><br />Правки(0)<br /></span></p></td>\n"
+"<td bgcolor=\"#f3f3f3\" style=\" vertical-align:top; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt; background-color:#f3f3f3;\">Новые(1)</span><span style=\" font-family:\'Arial\'; font-size:10pt;\"><br /><br />CHR1 SE<br />52. f - Переходим в мини 04_12(ср)<br /><br />Правки(0)</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Arial\'; font-size:10pt;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">Локализации(14)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">RL1 se</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">01_add_pieces_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">04_end_mg_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">04_tasks_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">11_morf_click_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">002_08_map_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">01_secret_open_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">01_secret_click_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">01_boilies_change_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">02_before_change_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">02_after_change_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">05_wrote1_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">05_wrote2_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">05_wrote3_ch</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt;\">05_book_change_ch<br /></span></p></td>\n"
+"<td bgcolor=\"#f3f3f3\" style=\" vertical-align:top; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt; background-color:#f3f3f3;\">Новые(7)</span><span style=\" font-family:\'Arial\'; font-size:10pt;\"><br /><br />CHR1 SE<br />52. mini - смешиваем ингридиенты 05_08(ср)<br />52. mini - пересыпаем порошок 03_08(л)<br />52. mini - наливаем сыворотку 03_22(ср)<br /><br />HM1 SE<br />15. f - скамейка клик 01_22(л)<br />15. f - люк клик 01_12(л)<br />15. f - Подставляем пенек 02_20(ср)<br />15. f - Открываем люк 03_06(ср)<br /><br />Правки(0)</span></p></td>\n"
+"<td bgcolor=\"#f3f3f3\" style=\" vertical-align:top; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Arial\'; font-size:10pt; background-color:#f3f3f3;\">Новые(3)</span><span style=\" font-family:\'Arial\'; font-size:10pt;\"><br /><br />CHR1 SE<br />52. веники качаются 02_06(л)<br />52. половица треснула 01_00(л)<br /><br />HM1 CE<br />01. f - Накрываем скорпиона 02_10(ср)<br /><br />Правки(0)</span></p></td></tr></table></body></html>"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Create Report"))
         self.inputZoomInTable.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
